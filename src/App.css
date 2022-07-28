@@ -104,6 +104,7 @@ body {
 .pokemon__size {
   display: flex;
   justify-content: space-around;
+  color: #ffffff;
 }
 
 .pokemon__size span {
