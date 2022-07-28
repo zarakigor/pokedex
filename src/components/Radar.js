@@ -8,16 +8,14 @@ function RadarChart({ chartData }) {
       r: {
         angleLines: {
           display: true,
+          color: "rgba(255, 255, 255, .3)",
+          lineWidth: 1,
         },
         suggestedMin: 0,
         suggestedMax: 150,
         ticks: {
           stepSize: 50,
           showLabelBackdrop: false,
-        },
-        angleLines: {
-          color: "rgba(255, 255, 255, .3)",
-          lineWidth: 1,
         },
       },
     },
