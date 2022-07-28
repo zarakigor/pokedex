@@ -1,0 +1,116 @@
+*,
+*::before,
+*:after {
+  box-sizing: border-box;
+}
+
+/* burası değişecek container falan filan*/
+
+body {
+  /* border: gold solid 1px; */
+  /* background-color: #ec3737; */
+  /* background-color: #e13c3c; */
+
+  background-color: #cfcfcf61;
+  background-color: #de3240;
+}
+
+.logo {
+  display: block;
+  width: 70%; /* desktop version da küçült */
+  margin: 0 auto;
+}
+
+.pokecard__container {
+  padding: 15px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(100px, 1fr));
+
+  gap: 1em;
+}
+
+.pokecard {
+  /* background-color: red; */
+  padding: 0.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 16rem;
+  border-radius: 50px;
+  /* border: 1px solid #f2f8f9; */
+
+  background-color: #fefefe;
+}
+
+.pokecard:hover,
+.pokecard:focus-within {
+  transition: all 0.4s ease-out; /* orjinali 0.2s*/
+  box-shadow: 0px 8px 12px rgba(38, 38, 38, 0.2);
+
+  background-color: black;
+  color: #fefefe;
+
+  /* border: 1px solid #cccccc; */
+
+  /* background-color: #cfcfcf00; */
+  /* top negatif relative dene*/
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.show {
+  visibility: initial;
+}
+
+.pokemonpage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pokemonpage__header {
+  margin: 1em 0;
+}
+
+/* Components */
+.pokemon__image {
+  display: block;
+  height: auto;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pokemon__id {
+  margin: 0;
+}
+
+.pokemon__name {
+  margin: 0.5em 0;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.pokemon__types {
+  display: flex;
+  justify-content: space-evenly;
+  margin: auto;
+  width: 8rem;
+}
+
+.pokemon__size {
+  display: flex;
+  justify-content: space-around;
+}
+
+.pokemon__size span {
+  font-weight: bold;
+}
+
+/* Radar Chart*/
+.chart-container {
+  width: 100%;
+}
