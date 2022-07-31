@@ -21,6 +21,11 @@ body {
   margin: 0 auto;
 }
 
+.form__container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .pokecard__container {
   padding: 15px;
   display: grid;
