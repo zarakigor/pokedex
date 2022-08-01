@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { Context } from "./Context";
-// import { red } from "@mui/material/colors";
 
 import Form from "./Form";
 import Pokecard from "./Pokecard";
