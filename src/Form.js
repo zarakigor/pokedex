@@ -11,16 +11,9 @@ function Form() {
     useContext(Context);
 
   const theme = createTheme({
-    typography: {
-      fontFamily: ["Merriweather Sans", "sans-serif"].join(","),
-      fontSize: 14,
-    },
     palette: {
       primary: {
         main: "#ffffff",
-      },
-      secondary: {
-        main: "#4caf50",
       },
     },
   });
@@ -28,7 +21,7 @@ function Form() {
   return (
     <div className="form__container">
       <ThemeProvider theme={theme}>
-        <FormControl sx={{ m: 1, minWidth: 120 }}>
+        <FormControl sx={{ m: 1, minWidth: 100 }}>
           <InputLabel id="demo-simple-select-autowidth-label">
             Generation
           </InputLabel>
@@ -50,7 +43,7 @@ function Form() {
             <MenuItem value={"generation8"}>8</MenuItem>
           </Select>
         </FormControl>
-        <FormControl sx={{ m: 1, minWidth: 120 }}>
+        <FormControl sx={{ m: 1, minWidth: 100 }}>
           <InputLabel id="demo-simple-select-autowidth-label">Type</InputLabel>
           <Select
             labelId="demo-simple-select-autowidth-label"
