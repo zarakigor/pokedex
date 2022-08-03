@@ -14,13 +14,15 @@ function Form() {
     typography: {
       fontFamily: ["Merriweather Sans", "sans-serif"].join(","),
       fontSize: 14,
+      fontWeightRegular: 600,
     },
     palette: {
       primary: {
         main: "#ffffff",
+        dark: "#000000",
       },
       secondary: {
-        main: "#4caf50",
+        main: "#27f590",
       },
     },
   });
@@ -29,7 +31,10 @@ function Form() {
     <div className="form__container">
       <ThemeProvider theme={theme}>
         <FormControl sx={{ m: 1, minWidth: 120 }}>
-          <InputLabel id="demo-simple-select-autowidth-label">
+          <InputLabel
+            id="demo-simple-select-autowidth-label"
+            sx={{ color: "primary.dark" }}
+          >
             Generation
           </InputLabel>
           <Select
@@ -51,7 +56,12 @@ function Form() {
           </Select>
         </FormControl>
         <FormControl sx={{ m: 1, minWidth: 120 }}>
-          <InputLabel id="demo-simple-select-autowidth-label">Type</InputLabel>
+          <InputLabel
+            id="demo-simple-select-autowidth-label"
+            sx={{ color: "primary.dark" }}
+          >
+            Type
+          </InputLabel>
           <Select
             labelId="demo-simple-select-autowidth-label"
             id="demo-simple-select-autowidth"
