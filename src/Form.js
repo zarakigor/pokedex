@@ -13,8 +13,8 @@ function Form() {
   const theme = createTheme({
     typography: {
       fontFamily: ["Merriweather Sans", "sans-serif"].join(","),
-      fontSize: 14,
-      fontWeightRegular: 600,
+      fontSize: 16,
+      fontWeightRegular: 500,
     },
     palette: {
       primary: {
@@ -44,6 +44,7 @@ function Form() {
             onChange={handleChangeGeneration}
             autoWidth
             label="Generation"
+            sx={{ color: "primary.dark" }}
           >
             <MenuItem value={"generation1"}>1</MenuItem>
             <MenuItem value={"generation2"}>2</MenuItem>
@@ -69,6 +70,7 @@ function Form() {
             onChange={handleChangeType}
             autoWidth
             label="Type"
+            sx={{ color: "primary.dark" }}
           >
             <MenuItem value="all">- All -</MenuItem>
             <MenuItem value="normal">Normal</MenuItem>
