@@ -1,16 +1,20 @@
 import { useEffect, useState } from "react";
 import { useParams, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Type from "./components/Type";
 import Name from "./components/Name";
 import Sprite from "./components/Sprite";
 import Stats from "./components/Stats";
 import Size from "./components/Size";
 
+import { Link } from "react-router-dom";
+
 function Page() {
   const location = useLocation();
   // if user writes id of the pokemon in url manually prevent null value
   const Data = location.state ? location.state.data : "";
   const { pokemonid } = useParams();
+  const navigate = useNavigate();
 
   const [newData, setNewData] = useState({
     id: "",
@@ -45,6 +49,8 @@ function Page() {
   //console.log(newData.stats[0]);
   let d = Data ? Data : newData;
 
+  const rakam = 6;
+
   return (
     <div className="pokemonpage">
       <div>
@@ -52,10 +58,14 @@ function Page() {
           <Name name={d.name} isPage={true} />
           <Type types={d.types} />
         </div>
-        <Sprite src={d.imageBig} name={d.name} />
+        {/* linki evolution için kullan evolution componenti yarat */}
+        <Link to={`/${rakam}`}>
+          <Sprite src={d.imageBig} name={d.name} />
+        </Link>
         <Size size={{ height: `${d.height}`, weight: `${d.weight}` }} />
       </div>
       <Stats stats={d.stats} />
+      <button onClick={() => navigate(-1)}>go back</button>
     </div>
   );
 }
