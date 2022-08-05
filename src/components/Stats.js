@@ -21,7 +21,6 @@ function Stats(props) {
       ],
     });
   }, [props]);
-  console.log("qwe");
 
   return (
     <div className="chart-container">
