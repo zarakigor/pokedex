@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import { useParams, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Type from "./components/Type";
 import Name from "./components/Name";
 import Sprite from "./components/Sprite";
 import Stats from "./components/Stats";
 import Size from "./components/Size";
 
-import { Link } from "react-router-dom";
+import { useFetchData } from "./useFetch";
 
 function Page() {
   const location = useLocation();
@@ -49,6 +50,7 @@ function Page() {
   //console.log(newData.stats[0]);
   let d = Data ? Data : newData;
 
+  const desc = useFetchData(d.name);
   const rakam = 6;
 
   return (
@@ -63,6 +65,7 @@ function Page() {
           <Sprite src={d.imageBig} name={d.name} />
         </Link>
         <Size size={{ height: `${d.height}`, weight: `${d.weight}` }} />
+        <p>{desc}</p>
       </div>
       <Stats stats={d.stats} />
       <button onClick={() => navigate(-1)}>go back</button>
