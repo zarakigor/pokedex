@@ -1,5 +1,4 @@
-import React, { useContext, useState } from "react";
-import { Context } from "./Context";
+import { useState } from "react";
 
 export function useFetchData(id) {
   const [description, setDescription] = useState("");
@@ -7,11 +6,16 @@ export function useFetchData(id) {
   fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`)
     .then((res) => res.json())
     .then((data) => {
-      // setDescription(
-      //   data.flavor_text_entries[data.flavor_text_entries.length - 3]
-      //     .flavor_text
-      // );
-      setDescription(data.flavor_text_entries[0].flavor_text);
+      // to find latest English description of pokemon
+      const flavorText = data.flavor_text_entries;
+      let isFound = false;
+      for (let i = flavorText.length - 1; !isFound; i--) {
+        if (flavorText[i].language.name === "en") {
+          setDescription(flavorText[i].flavor_text);
+          isFound = true;
+        }
+      }
+
       return data.evolution_chain.url;
     })
     .then((url) => {
