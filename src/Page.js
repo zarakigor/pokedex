@@ -8,7 +8,7 @@ import Sprite from "./components/Sprite";
 import Stats from "./components/Stats";
 import Size from "./components/Size";
 
-import { useFetchData } from "./useFetch";
+import { useFetchExtraData } from "./useFetch";
 
 function Page() {
   const location = useLocation();
@@ -47,10 +47,11 @@ function Page() {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pokemonid]);
-  //console.log(newData.stats[0]);
+
   let d = Data ? Data : newData;
 
-  const desc = useFetchData(d.name);
+  const desc = useFetchExtraData(d.name).flavor;
+  console.log(useFetchExtraData(d.name));
   const rakam = 6;
 
   return (
