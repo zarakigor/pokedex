@@ -7,6 +7,8 @@ import Name from "./components/Name";
 import Sprite from "./components/Sprite";
 import Stats from "./components/Stats";
 import Size from "./components/Size";
+import Entry from "./components/Entry";
+import Evolution from "./components/Evolution";
 
 import { useFetchExtraData } from "./useFetch";
 
@@ -50,9 +52,8 @@ function Page() {
 
   let d = Data ? Data : newData;
 
-  const desc = useFetchExtraData(d.name).entry;
+  const extraData = useFetchExtraData(d.name);
   console.log(useFetchExtraData(d.name));
-  const rakam = 6;
 
   return (
     <div className="pokemonpage">
@@ -61,17 +62,21 @@ function Page() {
           <Name name={d.name} isPage={true} />
           <Type types={d.types} />
         </div>
-        {/* linki evolution için kullan evolution componenti yarat */}
-        <Link to={`/${rakam}`}>
-          <Sprite src={d.imageBig} name={d.name} />
-        </Link>
-        <Size size={{ height: `${d.height}`, weight: `${d.weight}` }} />
-        <p>{desc}</p>
+        <Sprite src={d.imageBig} name={d.name} />
+        <div>
+          <Size size={{ height: `${d.height}`, weight: `${d.weight}` }} />
+          <Entry entry={extraData.entry} />
+        </div>
       </div>
       <Stats stats={d.stats} />
+      <Evolution evolution={extraData.evolution} />
       <button onClick={() => navigate(-1)}>go back</button>
     </div>
   );
 }
 
 export default Page;
+
+// <Link to={`/${rakam}`}>
+//   <Sprite src={d.imageBig} name={d.name} />
+// </Link>;
