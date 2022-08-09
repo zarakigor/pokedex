@@ -9,7 +9,7 @@ export function useFetchExtraData(id) {
     fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`)
       .then((res) => res.json())
       .then((data) => {
-        // to find latest English description of pokemon
+        // to find latest English pokedex entry of pokemon
         const flavorText = data.flavor_text_entries;
         let isFound = false;
         for (let i = flavorText.length - 1; !isFound; i--) {
@@ -17,7 +17,7 @@ export function useFetchExtraData(id) {
             isFound = true;
             setExtraData((prevState) => ({
               ...prevState,
-              flavor: flavorText[i].flavor_text,
+              entry: flavorText[i].flavor_text,
             }));
           }
         }
@@ -34,8 +34,7 @@ export function useFetchExtraData(id) {
 
             do {
               let evoDetails = evoData["evolution_details"][0];
-              let splitUrl = evoData.species.url.split("/");
-
+              let splitUrl = evoData.species.url.split("/"); // to get id of pokemon
               evoChain.push({
                 species_name: evoData.species.name,
                 id: splitUrl[splitUrl.length - 2],
@@ -45,6 +44,7 @@ export function useFetchExtraData(id) {
               });
               evoData = evoData["evolves_to"][0];
             } while (!!evoData && evoData.hasOwnProperty("evolves_to"));
+
             setExtraData((prevState) => ({
               ...prevState,
               evolution: evoChain,
