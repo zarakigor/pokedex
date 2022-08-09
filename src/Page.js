@@ -50,7 +50,7 @@ function Page() {
 
   let d = Data ? Data : newData;
 
-  const desc = useFetchExtraData(d.name).flavor;
+  const desc = useFetchExtraData(d.name).entry;
   console.log(useFetchExtraData(d.name));
   const rakam = 6;
 
