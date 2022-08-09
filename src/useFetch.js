@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 
-// return etmek için array kullan description ve evolvechain diye
-
 export function useFetchExtraData(id) {
   const [extraData, setExtraData] = useState([]);
 
@@ -55,10 +53,3 @@ export function useFetchExtraData(id) {
 
   return extraData;
 }
-
-// flavorText[i].flavor_text
-
-// setExtraData((prevState) => ({
-//   ...prevState,
-//   evolution: 4,
-// }))
