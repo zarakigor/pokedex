@@ -120,6 +120,7 @@ body {
 }
 
 /* Radar Chart*/
+/* mobile de 100 olsun desktop ve tablet de düşür */
 .chart-container {
   width: 100%;
 }
