@@ -20,7 +20,6 @@ function Pokecard(props) {
   });
 
   useEffect(() => {
-    setIsLoading(true);
     fetch(`https://pokeapi.co/api/v2/pokemon/${props.id}`, {
       headers: {
         "Content-Type": "application/json",
@@ -46,7 +45,7 @@ function Pokecard(props) {
     }, 1000);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [props.id]);
 
   return (
     <div key="key" className={`${isLoading ? "hide" : "show"} pokecard`}>
