@@ -14,13 +14,13 @@ function Stats(props) {
         {
           label: "Pokemon Stats",
           data: Array.from(props.stats).map((stat) => stat.base_stat),
-          backgroundColor: "rgba(255, 0, 132, 0.2)",
-          borderColor: "rgba(255, 99, 132, 1)",
+          backgroundColor: "rgba(255, 255, 255, .7)",
+          borderColor: "rgba(255, 255, 255, .7)",
           borderWidth: 1,
         },
       ],
     });
-  }, [props]);
+  }, []);
 
   return (
     <div className="chart-container">
