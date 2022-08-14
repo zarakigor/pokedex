@@ -140,3 +140,8 @@ body {
     content: "→︎";
   }
 }
+
+.pokemon__evolution--chain div:first-child .pokemon__evolution--line .arrow {
+  color: gold;
+  display: none;
+}
