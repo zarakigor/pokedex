@@ -1,5 +1,5 @@
 function Name(props) {
-  const myStyle = props.isPage
+  const myStyle = props.isSoloPage
     ? { color: "#ffffff", fontSize: "2.25em", margin: "0.5em" }
     : {};
   return (
