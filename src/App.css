@@ -119,16 +119,21 @@ body {
   margin-right: auto;
 }
 
-/* Radar Chart*/
-/* mobile de 100 olsun desktop ve tablet de düşür */
-.chart-container {
-  width: 100%;
+.pokemon__evolution--chain {
+  display: flex;
+  flex-direction: column;
+}
+
+.pokemon__evolution--line {
+  color: #ffffff;
+  margin-bottom: 2em;
 }
 
 .arrow {
-  display: block;
+  /* display: block; */
   font: normal 2.5rem/1 "Arial Unicode MS", "Trebuchet MS", "Arial", "Helvetica",
     sans-serif;
+  text-align: center;
 }
 
 .arrow::before {
@@ -141,7 +146,13 @@ body {
   }
 }
 
+/* hides first arrow from evolution chain*/
 .pokemon__evolution--chain div:first-child .pokemon__evolution--line .arrow {
-  color: gold;
   display: none;
+}
+
+/* Radar Chart*/
+/* mobile de 100 olsun desktop ve tablet de düşür */
+.chart-container {
+  width: 100%;
 }
