@@ -20,7 +20,7 @@ function Stats(props) {
         },
       ],
     });
-  }, []);
+  }, [props.stats]);
 
   return (
     <div className="chart-container">
