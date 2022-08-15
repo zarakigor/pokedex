@@ -5,15 +5,16 @@ import Name from "./Name";
 import Sprite from "./Sprite";
 
 function EvolutionLine(props) {
-  // if (props) {
-  //   console.log(props.info);
-  // }
-
   return (
     <div className="pokemon__evolution--line">
       <div className="arrow"></div>
-      <Sprite src={FetchSprite(props.info.id)} />
-      <Name name={props.info.species_name} myStyle={{ color: "white" }} />
+      <Link to={`/${props.info.id}`}>
+        <Sprite
+          src={FetchSprite(props.info.id)}
+          name={props.info.species_name}
+        />
+      </Link>
+      <Name name={props.info.species_name} />
     </div>
   );
 }
