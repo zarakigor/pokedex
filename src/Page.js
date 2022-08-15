@@ -2,14 +2,14 @@ import { useEffect, useState } from "react";
 import { useParams, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { useFetchExtraData } from "./useFetch";
+import { useFetchExtraData } from "./hooks/useFetch"; // adını değiştir
 import Type from "./components/Type";
 import Name from "./components/Name";
 import Sprite from "./components/Sprite";
 import Stats from "./components/Stats";
 import Size from "./components/Size";
 import Entry from "./components/Entry";
-import Evolution from "./components/Evolution";
+import EvolutionChain from "./components/EvolutionChain";
 
 function Page() {
   const location = useLocation();
@@ -27,6 +27,10 @@ function Page() {
     height: "",
     weight: "",
   });
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pokemonid]);
 
   // if user reach this page without using form
   useEffect(() => {
@@ -51,13 +55,14 @@ function Page() {
 
   let d = Data ? Data : newData;
 
+  // to get pokemon entries and evolution chain
   const extraData = useFetchExtraData(d.name);
 
   return (
     <div className="pokemonpage">
       <div>
         <div className="pokemonpage__header">
-          <Name name={d.name} isPage={true} />
+          <Name name={d.name} isSoloPage={true} />
           <Type types={d.types} />
         </div>
         <Sprite src={d.imageBig} name={d.name} />
@@ -67,7 +72,7 @@ function Page() {
         </div>
       </div>
       <Stats stats={d.stats} />
-      <Evolution evolution={extraData.evolution} />
+      <EvolutionChain evolution={extraData.evolution} />
       <button onClick={() => navigate(-1)}>go back</button>
     </div>
   );
