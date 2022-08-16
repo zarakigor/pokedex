@@ -72,7 +72,9 @@ body {
   margin: 1em 0;
 }
 
-/* Components */
+/*/////////////// 
+    Components 
+///////////////*/
 .pokemon__image {
   display: block;
   height: auto;
@@ -126,7 +128,11 @@ body {
 
 .pokemon__evolution--line {
   color: #ffffff;
-  margin-bottom: 2em;
+  margin: 1.5em;
+}
+
+.pokemon__evolution--line img {
+  width: 115px;
 }
 
 .arrow {
@@ -140,7 +146,7 @@ body {
   content: "↓";
 }
 
-@media (min-width: 619px) {
+@media (min-width: 768px) {
   .arrow::before {
     content: "→︎";
   }
@@ -152,7 +158,45 @@ body {
 }
 
 /* Radar Chart*/
-/* mobile de 100 olsun desktop ve tablet de düşür */
-.chart-container {
+.chart--container {
   width: 100%;
+}
+
+/*/////////////// 
+    Tablet View 
+///////////////*/
+@media (min-width: 768px) {
+  .pokecard__container {
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
+  }
+
+  .pokemon__image {
+    width: 80%;
+  }
+
+  .chart--container {
+    max-width: 500px;
+  }
+
+  .pokemon__evolution--chain {
+    flex-direction: unset;
+  }
+
+  .pokemon__evolution--chain .arrow {
+    margin-right: 1em;
+  }
+
+  .pokemon__evolution--line {
+    display: flex;
+    align-items: center;
+  }
+}
+
+/*/////////////// 
+    Desktop View 
+///////////////*/
+@media (min-width: 990px) {
+  .pokecard__container {
+    grid-template-columns: repeat(8, minmax(100px, 1fr));
+  }
 }
