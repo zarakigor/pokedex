@@ -8,13 +8,15 @@ function EvolutionLine(props) {
   return (
     <div className="pokemon__evolution--line">
       <div className="arrow"></div>
-      <Link to={`/${props.info.id}`}>
-        <Sprite
-          src={FetchSprite(props.info.id)}
-          name={props.info.species_name}
-        />
-      </Link>
-      <Name name={props.info.species_name} />
+      <div>
+        <Link to={`/${props.info.id}`}>
+          <Sprite
+            src={FetchSprite(props.info.id)}
+            name={props.info.species_name}
+          />
+        </Link>
+        <Name name={props.info.species_name} />
+      </div>
     </div>
   );
 }
