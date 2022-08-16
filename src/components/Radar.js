@@ -4,6 +4,7 @@ import { Chart as ChartJS } from "chart.js/auto";
 
 function RadarChart({ chartData }) {
   const options = {
+    responsive: true,
     elements: {
       point: {
         radius: 5,
