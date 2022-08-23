@@ -165,7 +165,7 @@ body {
 }
 
 /* Radar Chart*/
-.chart--container {
+.chart__container {
   width: 100%;
 }
 
@@ -199,7 +199,7 @@ body {
     width: 80%;
   }
 
-  .chart--container {
+  .chart__container {
     max-width: 500px;
   }
 
