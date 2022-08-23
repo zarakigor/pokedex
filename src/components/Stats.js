@@ -23,7 +23,7 @@ function Stats(props) {
   }, [props.stats]);
 
   return (
-    <div className="chart-container">
+    <div className="chart__container">
       <Radar chartData={statsData} />
     </div>
   );
