@@ -3,6 +3,7 @@ import { useParams, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useFetchExtraData } from "./hooks/useFetch"; // adını değiştir
+import Error from "./Error";
 import Type from "./components/Type";
 import Name from "./components/Name";
 import Sprite from "./components/Sprite";
@@ -59,21 +60,32 @@ function Page() {
   const extraData = useFetchExtraData(d.name);
 
   return (
-    <div className="pokemonpage">
-      <div>
-        <div className="pokemonpage__header">
-          <Name name={d.name} isSoloPage={true} />
-          <Type types={d.types} />
+    <div>
+      {/* if url has any non numeric character redirect them to Error page */}
+      {pokemonid.match(/[^$,.\d]/) ? (
+        <Error />
+      ) : (
+        <div className="pokemonpage">
+          <div className="page-left parça">
+            <div className="pokemonpage__header">
+              <Name name={d.name} isSoloPage={true} />
+              <Type types={d.types} />
+            </div>
+            <Sprite src={d.imageBig} name={d.name} />
+            <div>
+              <Size size={{ height: `${d.height}`, weight: `${d.weight}` }} />
+              <Entry entry={extraData.entry} />
+            </div>
+          </div>
+          <div className="page-right parça">
+            <Stats stats={d.stats} />
+            <EvolutionChain evolution={extraData.evolution} />
+          </div>
+          {/* <button onClick={() => navigate(-1)} className="btn">
+          GO BACK
+        </button> */}
         </div>
-        <Sprite src={d.imageBig} name={d.name} />
-        <div>
-          <Size size={{ height: `${d.height}`, weight: `${d.weight}` }} />
-          <Entry entry={extraData.entry} />
-        </div>
-      </div>
-      <Stats stats={d.stats} />
-      <EvolutionChain evolution={extraData.evolution} />
-      <button onClick={() => navigate(-1)}>go back</button>
+      )}
     </div>
   );
 }
