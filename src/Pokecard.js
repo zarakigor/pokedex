@@ -59,5 +59,3 @@ function Pokecard(props) {
   );
 }
 export default Pokecard;
-
-//data.sprites.other["official-artwork"].front_default,
