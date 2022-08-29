@@ -1,6 +1,6 @@
 function Name(props) {
   const myStyle = props.isSoloPage
-    ? { color: "#ffffff", fontSize: "2.25em", margin: "0.5em" }
+    ? { color: "#ffffff", fontSize: "2.25em", margin: "0" }
     : {};
   return (
     <div>
