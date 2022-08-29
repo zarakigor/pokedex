@@ -66,7 +66,7 @@ function Page() {
         <Error />
       ) : (
         <div className="pokemonpage">
-          <div className="page-left parça">
+          <div className="column-left column">
             <div className="pokemonpage__header">
               <Name name={d.name} isSoloPage={true} />
               <Type types={d.types} />
@@ -77,7 +77,7 @@ function Page() {
               <Entry entry={extraData.entry} />
             </div>
           </div>
-          <div className="page-right parça">
+          <div className="column-right column">
             <Stats stats={d.stats} />
             <EvolutionChain evolution={extraData.evolution} />
           </div>
