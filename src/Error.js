@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
+import error_image from "./assets/404.gif";
 
 function Error() {
   return (
-    <div>
-      <h2>404</h2>
-      <p>page not found psyduck ın resmi var</p>
-      <Link to="/">back to home</Link>
+    <div className="errorpage">
+      <h1>404</h1>
+      <p>Oops page not found!</p>
+      <img src={error_image}></img>
     </div>
   );
 }
