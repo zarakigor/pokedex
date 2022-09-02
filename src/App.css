@@ -15,7 +15,7 @@ body {
 
 .logo {
   display: block;
-  width: 70%; /* desktop version da küçült */
+  width: 60%; /* desktop version da küçült */
   margin: 0 auto;
 }
 
@@ -28,12 +28,10 @@ body {
   padding: 15px;
   display: grid;
   grid-template-columns: repeat(2, minmax(100px, 1fr));
-
   gap: 1em;
 }
 
 .pokecard {
-  /* background-color: red; */
   padding: 0.5em;
   display: flex;
   flex-direction: column;
@@ -41,8 +39,6 @@ body {
   text-align: center;
   /* min-height: 16rem; */
   border-radius: 30px;
-  /* border: 1px solid #f2f8f9; */
-
   background-color: #fefefe;
   transition: all 0.4s ease-out;
 }
@@ -63,13 +59,21 @@ body {
   visibility: initial;
 }
 
-.pokemonpage {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+/* .pokemonpage__background {
+  z-index: -1;
+  opacity: 0.05;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: rotate(160deg);
+  color: white;
+  width: 1000px;
+} */
 
-.column {
+.pokemonpage,
+.errorpage,
+.column,
+.footer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -77,6 +81,15 @@ body {
 
 .pokemonpage__header {
   margin: 1em 0;
+}
+
+.errorpage {
+  margin: 0.5em;
+}
+
+.errorpage h1 {
+  font-size: 5rem;
+  margin: 0;
 }
 
 /*/////////////// 
@@ -223,7 +236,7 @@ body {
 ///////////////*/
 @media (min-width: 990px) {
   .logo {
-    width: 30%;
+    width: 20%;
   }
   .pokecard__container {
     grid-template-columns: repeat(6, minmax(100px, 1fr));
