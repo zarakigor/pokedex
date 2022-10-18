@@ -71,6 +71,7 @@ body {
 } */
 
 .pokemonpage,
+.pokemonpage__column--container,
 .errorpage,
 .column,
 .footer {
@@ -90,6 +91,10 @@ body {
 .errorpage h1 {
   font-size: 5rem;
   margin: 0;
+}
+.errorpage img {
+  max-width: 500px;
+  width: 100%;
 }
 
 /*/////////////// 
@@ -242,7 +247,7 @@ body {
     grid-template-columns: repeat(6, minmax(100px, 1fr));
   }
 
-  .pokemonpage {
+  .pokemonpage__column--container {
     flex-direction: row;
     align-items: flex-start;
   }
