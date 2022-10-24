@@ -5,6 +5,17 @@ import { Chart as ChartJS } from "chart.js/auto";
 function RadarChart({ chartData }) {
   const options = {
     responsive: true,
+    plugins: {
+      legend: {
+        labels: {
+          color: "rgba(255,255,255, 1)",
+          font: {
+            family: "'Merriweather Sans', 'sans-serif'",
+            size: 16,
+          },
+        },
+      },
+    },
     elements: {
       point: {
         radius: 5,
