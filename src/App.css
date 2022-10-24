@@ -129,6 +129,7 @@ body {
   display: flex;
   justify-content: space-around;
   color: #ffffff;
+  font-size: 14px;
 }
 
 .pokemon__size span {
@@ -142,8 +143,7 @@ body {
   text-align: center;
   line-height: 1.4;
   max-width: 80%;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 4rem auto 4rem;
 }
 
 .pokemon__evolution--chain {
@@ -151,12 +151,12 @@ body {
   flex-direction: column;
 }
 
-.pokemon__evolution--line {
+.pokemon__evolution--stage {
   color: #ffffff;
   margin: 0.5em 1.5em;
 }
 
-.pokemon__evolution--line img {
+.pokemon__evolution--stage img {
   width: 115px;
 }
 
@@ -178,7 +178,7 @@ body {
 }
 
 /* hides first arrow from evolution chain*/
-.pokemon__evolution--chain div:first-child .pokemon__evolution--line .arrow {
+.pokemon__evolution--chain div:first-child .pokemon__evolution--stage .arrow {
   display: none;
 }
 
@@ -230,7 +230,7 @@ body {
     margin-right: 1em;
   }
 
-  .pokemon__evolution--line {
+  .pokemon__evolution--stage {
     display: flex;
     align-items: center;
   }
@@ -258,6 +258,10 @@ body {
 
   .pokemon__image {
     width: 70%;
+  }
+
+  .pokemon__entry {
+    margin: 4rem auto 0;
   }
 
   .column {
