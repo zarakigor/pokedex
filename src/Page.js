@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
-import { useFetchExtraData } from "./hooks/useFetch"; // adını değiştir
+import { useFetchExtraData } from "./hooks/useFetch"; // adını değiştir getFundementalData , getAllData
 import Error from "./Error";
 import Type from "./components/Type";
 import Name from "./components/Name";
@@ -66,24 +65,26 @@ function Page() {
         <Error />
       ) : (
         <div className="pokemonpage">
-          <div className="column-left column">
-            <div className="pokemonpage__header">
-              <Name name={d.name} isSoloPage={true} />
-              <Type types={d.types} />
+          <div className="pokemonpage__column--container">
+            <div className="column--left column">
+              <div className="pokemonpage__header">
+                <Name name={d.name} isSoloPage={true} />
+                <Type types={d.types} />
+              </div>
+              <Sprite src={d.imageBig} name={d.name} />
+              <div>
+                <Size size={{ height: `${d.height}`, weight: `${d.weight}` }} />
+                <Entry entry={extraData.entry} />
+              </div>
             </div>
-            <Sprite src={d.imageBig} name={d.name} />
-            <div>
-              <Size size={{ height: `${d.height}`, weight: `${d.weight}` }} />
-              <Entry entry={extraData.entry} />
+            <div className="column--right column">
+              <Stats stats={d.stats} />
+              <EvolutionChain evolution={extraData.evolution} />
             </div>
           </div>
-          <div className="column-right column">
-            <Stats stats={d.stats} />
-            <EvolutionChain evolution={extraData.evolution} />
-          </div>
-          {/* <button onClick={() => navigate(-1)} className="btn">
-          GO BACK
-        </button> */}
+          <button onClick={() => navigate(-1)} className="btn">
+            GO BACK
+          </button>
         </div>
       )}
     </div>
